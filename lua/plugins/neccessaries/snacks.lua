@@ -134,6 +134,14 @@ return {
       end,
       desc = "Find | Recent",
     },
+    {
+      "<leader>fs",
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = "Search | Visual selection or word",
+      mode = { "n", "x" },
+    },
 
     -- Git
     -- {
@@ -200,14 +208,6 @@ return {
         Snacks.picker.grep()
       end,
       desc = "Search | Grep",
-    },
-    {
-      "<leader>Sw",
-      function()
-        Snacks.picker.grep_word()
-      end,
-      desc = "Search | Visual selection or word",
-      mode = { "n", "x" },
     },
 
     -- search

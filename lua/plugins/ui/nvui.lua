@@ -6,8 +6,9 @@ return {
   {
     "NvChad/ui",
     event = "VeryLazy",
+    branch = "v3.0",
     config = function()
-      require "nvchad"
+      require("nvchad")
     end,
   },
   {
@@ -22,5 +23,4 @@ return {
       end, { desc = "NvChad | Base46 Load All Highlights" })
     end,
   },
-
 }

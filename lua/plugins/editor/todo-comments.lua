@@ -10,4 +10,5 @@ return {
       silent = true,
     },
   },
+  config = true,
 }
