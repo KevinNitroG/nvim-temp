@@ -15,19 +15,19 @@ return {
     {
       "<leader>fa",
       "<cmd>Telescope autocommands<cr>",
-      desc = "Telescope | Autocommands",
+      desc = "Find | Autocommands",
       silent = true,
     },
     {
       "<leader>fc",
       "<cmd>Telescope git_commits<cr>",
-      desc = "Telescope | Commits",
+      desc = "Find | Commits",
       silent = true,
     },
     -- {
     --   "<leader>ff",
     --   "<cmd>Telescope find_files<cr>",
-    --   desc = "Telescope | Files",
+    --   desc = "Find | Files",
     --   silent = true,
     -- },
     {
@@ -47,37 +47,37 @@ return {
           },
         }
       end,
-      desc = "Telescope | Find Files",
+      desc = "Find | Find Files",
       silent = true,
     },
     {
       "<leader>fs",
       "<cmd>Telescope persisted<cr>",
-      desc = "Telescope | Sessions",
+      desc = "Find | Sessions",
       silent = true,
     },
     {
       "<leader>fm",
       "<cmd>Telescope marks<cr>",
-      desc = "Telescope | Marks",
+      desc = "Find | Marks",
       silent = true,
     },
     {
       "<leader>fM",
       "<cmd>Telescope man_pages<cr>",
-      desc = "Telescope | Man Pages",
+      desc = "Find | Man Pages",
       silent = true,
     },
     {
       "<leader>fw",
       "<cmd>Telescope live_grep<cr>",
-      desc = "Telescope | Word",
+      desc = "Find | Word",
       silent = true,
     },
     {
       "<leader>fb",
       "<cmd>Telescope buffers<cr>",
-      desc = "Telescope | Buffers",
+      desc = "Find | Buffers",
       silent = true,
     },
     {
@@ -85,37 +85,37 @@ return {
       function()
         require("telescope").extensions.notify.notify()
       end,
-      desc = "Telescope | Notify History",
+      desc = "Find | Notify History",
       silent = true,
     },
     {
       "<leader>fh",
       "<cmd>Telescope help_tags<cr>",
-      desc = "Telescope | Help",
+      desc = "Find | Help",
       silent = true,
     },
     {
       "<leader>fk",
       "<cmd>Telescope keymaps<cr>",
-      desc = "Telescope | Keymaps",
+      desc = "Find | Keymaps",
       silent = true,
     },
     {
       "<leader>fC",
       "<cmd>Telescope commands<cr>",
-      desc = "Telescope | Commands",
+      desc = "Find | Commands",
       silent = true,
     },
     {
       "<leader>fr",
       "<cmd>Telescope oldfiles<cr>",
-      desc = "Telescope | Recent Files",
+      desc = "Find | Recent Files",
       silent = true,
     },
     {
       "<leader>fs",
       "<cmd>Telescope grep_string<cr>",
-      desc = "Telescope | Grep String",
+      desc = "Find | Grep String",
       silent = true,
     },
     {
@@ -125,49 +125,49 @@ return {
         require("telescope.builtin").current_buffer_fuzzy_find { default_text = text }
       end,
       mode = "v",
-      desc = "Telescope | Grep String Under Cursor",
+      desc = "Find | Grep String Under Cursor",
       silent = true,
     },
     {
       "<leader>fH",
       "<cmd>Telescope highlights<cr>",
-      desc = "Telescope | Highlights",
+      desc = "Find | Highlights",
       silent = true,
     },
     {
       "<leader>ls",
       "<cmd>Telescope lsp_document_symbols<cr>",
-      desc = "Telescope | Buffer Symbols",
+      desc = "Find | Buffer Symbols",
       silent = true,
     },
     {
       "<leader>lS",
       "<cmd>Telescope lsp_workspace_symbols<cr>",
-      desc = "Telescope | Workspace Symbols",
+      desc = "Find | Workspace Symbols",
       silent = true,
     },
     {
       "<leader>gb",
       "<cmd>Telescope git_branches<cr>",
-      desc = "Telescope | Checkout branch",
+      desc = "Find | Checkout branch",
       silent = true,
     },
     {
       "<leader>gc",
       "<cmd>Telescope git_commits<cr>",
-      desc = "Telescope | Checkout commit",
+      desc = "Find | Checkout commit",
       silent = true,
     },
     {
       "<C-Space>",
       open_spell_sugestion,
-      desc = "Telescope | Open Spell Suggestion",
+      desc = "Find | Open Spell Suggestion",
       silent = true,
     },
     {
       "<M-;>", -- For windows terminal bruh
       open_spell_sugestion,
-      desc = "Telescope | Open Spell Suggestion",
+      desc = "Find | Open Spell Suggestion",
       silent = true,
     }
   },
