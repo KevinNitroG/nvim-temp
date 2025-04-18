@@ -9,6 +9,7 @@ M._keymaps = function(_, bufnr)
   map("n", "gD", vim.lsp.buf.declaration, opts("Go to declaration"))
   map("n", "gd", vim.lsp.buf.definition, opts("Go to definition"))
   map("n", "gI", vim.lsp.buf.implementation, opts("Go to definition"))
+  map("n", "gl", require("tiny-inline-diagnostic").get_diagnostic_under_cursor, opts("Inline diagnostic"))
   map("n", "g<C-d>", vim.lsp.buf.type_definition, opts("Go to type definition"))
   map("n", "<leader>lw", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
   map("n", "<leader>lW", vim.lsp.buf.remove_workspace_folder, opts("Remove workspace folder"))
@@ -16,6 +17,10 @@ M._keymaps = function(_, bufnr)
   map("n", "<leader>w<C-l>", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts("List workspace folders"))
+
+  vim.keymap.set("n", "<leader>lh", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, opts("Toggle Inlay Hints"))
 end
 
 -- export on_attach & capabilities

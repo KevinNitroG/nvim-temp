@@ -23,7 +23,7 @@ return {
       enabled = false,
     },
     indent = {
-      enabled = true,
+      enabled = false,
     },
     input = {
       enabled = true,
@@ -38,7 +38,7 @@ return {
       enabled = false,
     },
     scope = {
-      enabled = true,
+      enabled = false,
     },
     scroll = {
       enabled = true,

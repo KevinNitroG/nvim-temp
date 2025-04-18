@@ -12,9 +12,9 @@ return {
       "CmdlineEnter",
     },
     version = "1.*",
-    opts = function()
-      ---@type blink.cmp.Config
-      local opts = {
+    ---@param opts blink.cmp.Config
+    opts = function(_, opts)
+      opts = vim.tbl_deep_extend("force", opts or {}, {
         snippets = { preset = "luasnip" },
         appearance = { nerd_font_variant = "normal" },
         keymap = {
@@ -32,7 +32,6 @@ return {
           },
         },
         sources = {
-          default = { "lazydev", "lsp", "path", "snippets", "buffer" },
           providers = {
             lazydev = {
               name = "LazyDev",
@@ -44,9 +43,32 @@ return {
         signature = {
           enabled = false,
         },
-      }
-      return opts
+        providers = {
+          emoji = {
+            module = "blink-emoji",
+            name = "Emoji",
+            score_offset = 15, -- Tune by preference
+            opts = { insert = true }, -- Insert emoji (default) or complete its name
+            should_show_items = function()
+              return vim.tbl_contains(
+                -- Enable emoji completion only for git commits and markdown.
+                -- By default, enabled for all file-types.
+                { "gitcommit", "markdown" },
+                vim.o.filetype
+              )
+            end,
+          },
+        },
+      })
+
+      opts.sources.default = vim.list_extend(
+        type(opts.sources.default) == "table" and opts.sources.default() or {},
+        { "lazydev", "lsp", "path", "snippets", "buffer", "emoji" }
+      )
     end,
+    dependencies = {
+      "moyiz/blink-emoji.nvim",
+    },
   },
   -- { import = "nvchad.blink.lazysec" },
 }

@@ -1,11 +1,3 @@
-local open_spell_sugestion = function()
-  local col = vim.fn.col(".")
-  local line = vim.fn.getline(".")
-  if col <= #line and line:sub(col, col):match("%a") then
-    vim.cmd("Telescope spell_suggest")
-  end
-end
-
 ---@type NvPluginSpec
 return {
   "nvim-telescope/telescope.nvim",
@@ -17,8 +9,8 @@ return {
     },
   },
   keys = {
-    { "<C-Space>", open_spell_sugestion, desc = "Find | Spell Suggest", silent = true },
-    { "<M-;>", open_spell_sugestion, desc = "Find | Spell Suggest", silent = true },
+    { "<C-Space>", require("core.utils").open_spell_sugestion, desc = "Find | Spell Suggest", silent = true },
+    { "<M-;>", require("core.utils").open_spell_sugestion, desc = "Find | Spell Suggest", silent = true },
   },
   opts = {
     extensions_list = {

@@ -1,6 +1,8 @@
 ---@type NvPluginSpec
+-- NOTE: This is temporary because mason is unmtained
 return {
   "iguanacucumber/mason.nvim",
+  branch = "next",
   event = {
     "BufReadPost",
     "BufNewFile",

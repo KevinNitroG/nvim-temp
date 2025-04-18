@@ -32,6 +32,6 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-if vim.g.inlayhint_default and vim.fn.has("nvim-0.10") == 1 then
+if vim.g.inlayhint_default then
   vim.lsp.inlay_hint.enable(true)
 end

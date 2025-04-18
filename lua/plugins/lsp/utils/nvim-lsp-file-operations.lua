@@ -6,5 +6,5 @@ return {
     "nvim-tree/nvim-tree.lua",
   },
   cond = vim.g.use_lsp_file_operation,
-  config = true,
+  config = true, -- NOTE: Does this work? It will config before lsps are setup
 }
