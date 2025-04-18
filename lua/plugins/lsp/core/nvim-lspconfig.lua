@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   "neovim/nvim-lspconfig",
   event = {
@@ -5,7 +6,7 @@ return {
     "BufNewFile",
   },
   config = function()
-    require("nvchad.configs.lspconfig").defaults()
+    require("configs.lspconfig").defaults()
 
     local servers = { "html", "cssls" }
     vim.lsp.enable(servers)

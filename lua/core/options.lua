@@ -54,12 +54,12 @@ o.shortmess = "AcqFI"
 -- o.shellquote = ""
 -- o.shellxquote = ""
 
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
 -- opt.iskeyword:append "-"
 
 -- Replace builtin grep with ripgrep
-if vim.fn.executable "rg" then
-  local rgignore = vim.fn.getenv "HOME" .. "/.config/ripgrep/.rgignore"
-  opt.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file "
-    .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath "config" .. "/.config/ripgrep/.rgignore")
+if vim.fn.executable("rg") then
+  local rgignore = vim.fn.getenv("HOME") .. "/.config/ripgrep/.rgignore"
+  o.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file "
+    .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath("config") .. "/.config/ripgrep/.rgignore")
 end

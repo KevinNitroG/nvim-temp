@@ -1,16 +1,16 @@
 local g = vim.g
 
 local sysname = vim.uv.os_uname().sysname
-local os = sysname:match "Windows" and "Windows" or sysname:match "Linux" and "Linux" or sysname -- Windows, Linux, Darwin, NetBSD,...
+local os = sysname:match("Windows") and "Windows" or sysname:match("Linux") and "Linux" or sysname -- Windows, Linux, Darwin, NetBSD,...
 local is_windows = os == "Windows"
 
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
 g.mapleader = " "
 
 g.markdown_recommended_style = 0
 g.mkdp_auto_close = false
-g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate"
-g.vscode_snippets_path = vim.fn.stdpath "config" .. "/snippets/vscode"
+g.snipmate_snippets_path = vim.fn.stdpath("config") .. "/snippets/snipmate"
+g.vscode_snippets_path = vim.fn.stdpath("config") .. "/snippets/vscode"
 g.startup_message = false
 g.random_header = false
 g.skip_ts_context_commentstring_module = true
@@ -32,6 +32,6 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-if vim.g.inlayhint_default and vim.fn.has "nvim-0.10" == 1 then
+if vim.g.inlayhint_default and vim.fn.has("nvim-0.10") == 1 then
   vim.lsp.inlay_hint.enable(true)
 end

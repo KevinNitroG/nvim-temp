@@ -7,7 +7,7 @@ return {
   },
 
   ui = {
-    border = vim.g.border_enabled and "rounded" or "none",
+    border = "rounded",
     icons = {
       ft = "",
       lazy = "󰂠 ",
@@ -21,7 +21,7 @@ return {
     notify = false,
   },
 
-  lockfile = vim.fn.stdpath "data" .. "/lazy-lock.json",
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
 
   performance = {
     rtp = {

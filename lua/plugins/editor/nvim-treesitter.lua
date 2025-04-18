@@ -1,8 +1,10 @@
 ---@type NvPluginSpec
--- NOTE: Syntax Highlighting
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = { "BufReadPost", "BufNewFile" },
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   cmd = {
     "TSInstall",
     "TSUninstall",
@@ -15,37 +17,6 @@ return {
     "TSModuleInfo",
     "TSToggle",
     "TSBufToggle",
-  },
-  dependencies = {
-    {
-      "windwp/nvim-ts-autotag",
-      opts = {
-        opts = {
-          -- Defaults
-          enable_close = true, -- Auto close tags
-          enable_rename = true, -- Auto rename pairs of tags
-          enable_close_on_slash = false, -- Auto close on trailing </
-        },
-      },
-    },
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    {
-      "nvim-treesitter/nvim-treesitter-context",
-      init = function()
-        vim.keymap.set(
-          "n",
-          "<leader>oc",
-          "<cmd>TSContextToggle<cr>",
-          { desc = "Treesitter | Toggle Context", silent = true }
-        )
-        vim.keymap.set("n", "[c", function()
-          require("treesitter-context").go_to_context(vim.v.count1)
-        end, { desc = "Treesitter | Jumping to context (upwards)", silent = true })
-      end,
-      opts = {
-        enable = false,
-      },
-    },
   },
   opts = {
     highlight = {
@@ -84,7 +55,6 @@ return {
       "xml",
       "yaml",
     },
-    auto_install = true,
     indent = {
       enable = true,
       disable = {
@@ -99,10 +69,10 @@ return {
       swap = {
         enable = true,
         swap_next = {
-          ["sn"] = "@parameter.inner",
+          ["gn"] = "@parameter.inner",
         },
         swap_previous = {
-          ["sp"] = "@parameter.inner",
+          ["gp"] = "@parameter.inner",
         },
       },
       move = {
@@ -168,4 +138,36 @@ return {
   init = function()
     vim.treesitter.language.register("bash", "env")
   end,
+  config = true,
+  dependencies = {
+    {
+      "windwp/nvim-ts-autotag",
+      opts = {
+        opts = {
+          -- Defaults
+          enable_close = true, -- Auto close tags
+          enable_rename = true, -- Auto rename pairs of tags
+          enable_close_on_slash = false, -- Auto close on trailing </
+        },
+      },
+    },
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+      "nvim-treesitter/nvim-treesitter-context",
+      init = function()
+        vim.keymap.set(
+          "n",
+          "<leader>oc",
+          "<cmd>TSContextToggle<cr>",
+          { desc = "Treesitter | Toggle Context", silent = true }
+        )
+        vim.keymap.set("n", "[c", function()
+          require("treesitter-context").go_to_context(vim.v.count1)
+        end, { desc = "Treesitter | Jumping to context (upwards)", silent = true })
+      end,
+      opts = {
+        enable = false,
+      },
+    },
+  },
 }
