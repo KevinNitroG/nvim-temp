@@ -84,7 +84,7 @@ return {
       "xml",
       "yaml",
     },
-    auto_install = vim.fn.executable "tree-sitter-cli" == 1,
+    auto_install = true,
     indent = {
       enable = true,
       disable = {
