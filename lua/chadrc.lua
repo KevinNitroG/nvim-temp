@@ -175,7 +175,7 @@ M.base46 = {
   theme_toggle = { "catppuccin", "one_light" },
   -- TODO: Check this later to remove
   integrations = {
-    "cmp",
+    "blink",
     "dap",
     "defaults",
     "devicons",

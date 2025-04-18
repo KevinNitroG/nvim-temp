@@ -10,5 +10,7 @@ return {
       show_start = false,
     },
   },
-  config = true,
+  config = function(_, opts)
+    require("ibl").setup(opts)
+  end,
 }
