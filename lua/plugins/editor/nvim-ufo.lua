@@ -19,31 +19,5 @@ return {
   },
   dependencies = {
     "kevinhwang91/promise-async",
-    {
-      "luukvbaal/statuscol.nvim",
-      config = function()
-        local builtin = require("statuscol.builtin")
-        require("statuscol").setup({
-          relculright = true,
-          ft_ignore = {
-            "NvimTree",
-          },
-          segments = {
-            { text = { builtin.foldfunc, "  " }, click = "v:lua.ScFa" },
-            -- { sign = { namespace = { "diagnostic" } } },
-            { text = { " ", builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-            { text = { "%s" }, click = "v:lua.ScSa" },
-            -- {
-            --   sign = {
-            --     name = { "GitSigns*" },
-            --     namespace = { "gitsigns" },
-            --     colwidth = 1,
-            --   },
-            --   click = "v:lua.ScSa",
-            -- },
-          },
-        })
-      end,
-    },
   },
 }

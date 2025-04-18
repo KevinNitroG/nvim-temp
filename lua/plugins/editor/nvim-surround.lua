@@ -1,14 +1,9 @@
 ---@type NvPluginSpec
 return {
-  "lukas-reineke/indent-blankline.nvim",
+  "kylechui/nvim-surround",
   event = {
     "BufReadPost",
     "BufNewFile",
-  },
-  opts = {
-    scope = {
-      show_start = false,
-    },
   },
   config = true,
 }

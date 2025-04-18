@@ -5,4 +5,6 @@ return {
   { import = "plugins.neccessaries" },
   { import = "plugins.ui" },
   { import = "plugins.utils" },
+  { import = "plugins.database" },
+  { import = "plugins.ai" },
 }

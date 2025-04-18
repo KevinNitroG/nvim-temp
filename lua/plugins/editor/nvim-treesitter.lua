@@ -1,3 +1,4 @@
+local func = require("vim.func")
 ---@type NvPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter",
@@ -138,7 +139,9 @@ return {
   init = function()
     vim.treesitter.language.register("bash", "env")
   end,
-  config = true,
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts) -- NOTE: This is trick bruh
+  end,
   dependencies = {
     {
       "windwp/nvim-ts-autotag",

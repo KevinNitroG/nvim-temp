@@ -1,14 +1,9 @@
 ---@type NvPluginSpec
 return {
-  "lukas-reineke/indent-blankline.nvim",
+  "echasnovski/mini.ai",
   event = {
     "BufReadPost",
     "BufNewFile",
-  },
-  opts = {
-    scope = {
-      show_start = false,
-    },
   },
   config = true,
 }

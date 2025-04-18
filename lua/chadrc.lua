@@ -171,8 +171,30 @@ M.lsp = { signature = true }
 
 M.base46 = {
   theme = "catppuccin",
-  transparency = true,
+  transparency = false,
   theme_toggle = { "catppuccin", "one_light" },
+  -- TODO: Check this later to remove
+  integrations = {
+    "cmp",
+    "dap",
+    "defaults",
+    "devicons",
+    "diffview",
+    "lsp",
+    "markview",
+    "mason",
+    "notify",
+    "nvimtree",
+    "rainbowdelimiters",
+    "statusline",
+    "telescope",
+    "todo",
+    "treesitter",
+    "trouble",
+    "whichkey",
+    "blankline",
+    "lspsaga", -- override NvChad's background in highlights.lua
+  },
   hl_override = {
     -- WARN: Only suitable while using catppuccin with transparent. Consider to remove if use another theme.
     Visual = { bg = "one_bg2" },
