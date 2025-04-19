@@ -92,7 +92,5 @@ return {
     print_var_statements = {},
     show_success_message = false,
   },
-  config = function(_, opts)
-    require("refactoring").setup(opts)
-  end,
+  main = "refactoring",
 }

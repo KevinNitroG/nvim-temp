@@ -2,7 +2,6 @@
 ---@type NvPluginSpec
 return {
   "max397574/better-escape.nvim",
-  name = "better_escape",
   event = "VeryLazy",
   opts = {
     default_mappings = false,
@@ -14,7 +13,5 @@ return {
       },
     },
   },
-  config = function(_, opts)
-    require("better_escape").setup(opts)
-  end,
+  main = "better_escape",
 }

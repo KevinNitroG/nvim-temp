@@ -3,7 +3,7 @@
 ---@type NvPluginSpec
 return {
   "zbirenbaum/copilot.lua",
-  enabled = true,
+  enabled = false,
   build = ":Copilot auth",
   cmd = "Copilot",
   opts = {
@@ -49,21 +49,18 @@ return {
   end,
   dependencies = {
     "saghen/blink.cmp",
-    ---@param opts blink.cmp.Config
-    opts = function(_, opts)
-      opts = vim.tbl_deep_extend("force", opts or {}, {
-        sources = {
-          providers = {
-            copilot = {
-              name = "copilot",
-              module = "blink-copilot",
-              score_offset = 100,
-              async = true,
-            },
+    ---@type blink.cmp.Config
+    opts = {
+      sources = {
+        providers = {
+          copilot = {
+            name = "copilot",
+            module = "blink-copilot",
+            score_offset = 100,
+            async = true,
           },
         },
-      })
-      opts.sources.default = vim.list_extend(opts.sources.default or {}, { "copilot" })
-    end,
+      },
+    },
   },
 }

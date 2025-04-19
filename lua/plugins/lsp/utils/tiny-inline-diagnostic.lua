@@ -2,6 +2,7 @@
 -- NOTE: Show Better Diagnostic Inline
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
+  enabled = false,
   init = function()
     vim.diagnostic.config({ virtual_text = false })
   end,
